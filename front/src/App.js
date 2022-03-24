@@ -24,7 +24,7 @@ class App extends Component {
                             <Link to="/info">info</Link>
                         </Menu.Item>
                         <Menu.Item key="/pgadmin">
-                            <Link to="/info">pgadmin</Link>
+                            <Link to="/pgadmin">pgadmin</Link>
                         </Menu.Item>
                     </Menu>
                     </Sider>

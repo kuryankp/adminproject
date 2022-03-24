@@ -1,0 +1,12 @@
+FROM node:16.13.1-alpine
+
+WORKDIR /usr/src/app
+
+COPY ./package.json ./
+RUN npm install
+
+COPY ./App.js .
+
+EXPOSE 3000
+
+ENTRYPOINT ["node", "App.js"]
