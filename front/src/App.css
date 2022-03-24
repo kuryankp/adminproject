@@ -1,0 +1,29 @@
+@import '~antd/dist/antd.css';
+
+#components-layout-demo-side .logo {
+  height: 32px;
+  margin: 16px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.site-layout-background {
+  height: 100%;
+}
+
+.site-layout .site-layout-background {
+  background: #487567;
+}
+
+.site-layout-sider {
+  background: rgba(126, 206, 182, 0.7);
+  color: #330a5e;
+
+}
+.site-layout-footer {
+  color: #330a5e;
+  background: #838d7b;
+}
+
+.site-layout-header {
+  background: #838d7b;
+}
