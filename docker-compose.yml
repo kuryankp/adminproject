@@ -15,7 +15,7 @@ services:
       - adminnetwork
     restart: always
   database:
-    image: postgres:13-alpine
+    image: kuryankp/adminprojectdatabase:v0.0.1
     container_name: database
     environment:
       POSTGRES_USER: kuryandb
