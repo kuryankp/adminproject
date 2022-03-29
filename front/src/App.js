@@ -26,6 +26,9 @@ class App extends Component {
                         <Menu.Item key="/pgadmin">
                             <Link to="/pgadmin">pgadmin</Link>
                         </Menu.Item>
+                        <Menu.Item key="/charts">
+                            <Link to="/charts">Графики</Link>
+                        </Menu.Item>
                     </Menu>
                     </Sider>
                     <Content>

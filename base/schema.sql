@@ -14,7 +14,7 @@ alter table mcu
 create unique index if not exists mcu_id_uindex
     on mcu (id);
 
-create table if not exists "Sensor"
+create table if not exists "sensor"
 (
     id       serial
         constraint sensor_pk
@@ -24,13 +24,13 @@ create table if not exists "Sensor"
     comment  varchar(255)
 );
 
-alter table "Sensor"
+alter table "sensor"
     owner to kuryandb;
 
 create unique index if not exists sensor_id_uindex
-    on "Sensor" (id);
+    on "sensor" (id);
 
-create table if not exists "Place"
+create table if not exists "place"
 (
     id      serial
         constraint place_pk
@@ -39,13 +39,13 @@ create table if not exists "Place"
     comment varchar(255)
 );
 
-alter table "Place"
+alter table "place"
     owner to kuryandb;
 
 create unique index if not exists place_id_uindex
-    on "Place" (id);
+    on "place" (id);
 
-create table if not exists "SM_Cross"
+create table if not exists "sm_cross"
 (
     id        serial
         constraint sm_cross_pk
@@ -56,39 +56,39 @@ create table if not exists "SM_Cross"
             on delete cascade,
     sensor_id integer not null
         constraint sm_cross_sensor_id_fk
-            references "Sensor"
+            references "sensor"
             on delete cascade
 );
 
-alter table "SM_Cross"
+alter table "sm_cross"
     owner to kuryandb;
 
 create unique index if not exists sm_cross_id_uindex
-    on "SM_Cross" (id);
+    on "sm_cross" (id);
 
-create table if not exists "SMC_P_Cross"
+create table if not exists "smc_p_cross"
 (
     id            serial
         constraint smc_p_cross_pk
             primary key,
     smc_id        integer not null
         constraint smc_p_cross_sm_cross_id_fk
-            references "SM_Cross"
+            references "sm_cross"
             on delete cascade,
     place_id      integer not null
         constraint smc_p_cross_place_id_fk
-            references "Place"
+            references "place"
             on delete cascade,
     startdatetime timestamp,
     stopdatetime  timestamp,
     enabled       boolean
 );
 
-alter table "SMC_P_Cross"
+alter table "smc_p_cross"
     owner to kuryandb;
 
 create unique index if not exists smc_p_cross_id_uindex
-    on "SMC_P_Cross" (id);
+    on "smc_p_cross" (id);
 
 create table if not exists sdata
 (
@@ -97,7 +97,7 @@ create table if not exists sdata
             primary key,
     smcpc_id integer                             not null
         constraint sdata_smc_p_cross_id_fk
-            references "SMC_P_Cross",
+            references "smc_p_cross",
     datetime timestamp default CURRENT_TIMESTAMP not null,
     value    real                                not null
 );

@@ -6,6 +6,7 @@ import {BrowserRouter, Route, Routes} from "react-router-dom"
 import Info from "./components/info/info"
 import Pgadmin from "./components/pgadmin/pgadmin"
 import {Home} from "./components/home/home"
+import {Charts} from "./components/charts/charts"
 
 ReactDOM.render(
     <BrowserRouter>
@@ -14,6 +15,7 @@ ReactDOM.render(
                 <Route path="" element={<Home/>}/>
                 <Route path="info" element={<Info/>}/>
                 <Route path="pgadmin" element={<Pgadmin/>}/>
+                <Route path="charts" element={<Charts/>}/>
             </Route>
         </Routes>
     </BrowserRouter>,
