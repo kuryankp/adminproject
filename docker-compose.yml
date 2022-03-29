@@ -1,0 +1,35 @@
+version: '3'
+services:
+  front:
+    image: kuryankp/adminprojectfrontend:v0.0.2
+    container_name: front
+    ports:
+      - 80:80
+    networks:
+      - adminnetwork
+    restart: always
+  back:
+    image: kuryankp/adminprojectbackend:v0.0.1
+    container_name: back
+    networks:
+      - adminnetwork
+    restart: always
+  database:
+    image: postgres:13-alpine
+    container_name: database
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: kuryandb
+      POSTGRES_PASSWORD: 228
+      POSTGRES_DB: datakkp
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - admindb:/var/lib/postgresql/data
+    networks:
+      - adminnetwork
+    restart: always
+volumes:
+  admindb:
+networks:
+  adminnetwork:
