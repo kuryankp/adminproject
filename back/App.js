@@ -201,7 +201,7 @@ app.get('/api/fill', (req, res) => {
             .then(data => {
                 const inserts = []
                 data.forEach(item => {
-                    for (let i = 0; i < 100000; i++) {
+                    for (let i = 0; i < 1000000; i++) {
                         inserts.push({
                             value: generateValue(),
                             datetime: randomDate(currentDate, previousDate),
@@ -334,5 +334,5 @@ function randomDate(start, end) {
 }
 
 function generateValue() {
-    return Math.random() * (99 - 1) - 20;
+    return Math.random() * (99 - 1) + 1;
 }

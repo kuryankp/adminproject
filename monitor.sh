@@ -4,9 +4,9 @@ system_info=$(top 1 -ibn 1)
 date_time=$(date '+%Y-%m-%d %H:%M:%S'.000000)
 
 tasks=$(echo "$system_info" | grep Tasks | cut -d ' ' -f 2 | tr , .)
-cpu0=$(echo "$system_info" | grep Cpu0 | cut -d ' ' -f 5 | tr y, .)
+cpu0=$(echo "$system_info" | grep Cpu0 | cut -d ' ' -f 5 | tr , .)
 cpu1=$(echo "$system_info" | grep Cpu1 | cut -d ' ' -f 5 | tr , .)
-memory=$(echo "$system_info" | grep "MiB Mem" | cut -d ' ' -f 16 | tr , .)
+memory=$(echo "$system_info" | grep "MiB Mem" | cut -d ' ' -f 15 | tr , .)
 
 insert_tasks="INSERT INTO public.sdata (smcpc_id, datetime, value) VALUES (5, '$date_time', $tasks);"
 insert_cpu0="INSERT INTO public.sdata (smcpc_id, datetime, value) VALUES (6, '$date_time', $cpu0);"

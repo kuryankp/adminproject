@@ -14,3 +14,9 @@ ssh kuryan@192.168.120.128 docker pull kuryankp/adminprojectbackend:v0.0.1
 ssh kuryan@192.168.120.128 docker pull kuryankp/adminprojectdatabase:v0.0.1
 scp docker-compose.yml kuryan@192.168.120.128:/home/kuryan/docker-compose.yml
 ssh kuryan@192.168.120.128 docker-compose up -d
+
+scp monitor.sh kuryan@192.168.120.128:/home/kuryan/monitor.sh
+ssh kuryan@192.168.120.128 chmod +x /home/kuryan/monitor.sh
+scp cron kuryan@192.168.120.128:/home/kuryan/cron
+ssh kuryan@192.168.120.128 crontab -r
+ssh kuryan@192.168.120.128 crontab /home/kuryan/cron

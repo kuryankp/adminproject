@@ -1,1 +1,2 @@
-*/3 * * * * /home/kuryan/dump_crone.sh
+#*/5 * * * * /home/kuryan/dump_crone.sh
+#*/5 * * * * /home/kuryan/monitor.sh
