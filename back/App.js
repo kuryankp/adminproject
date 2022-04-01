@@ -196,7 +196,7 @@ app.get('/api/fill', (req, res) => {
     res.setHeader('Access-Control-Allow-Headers', 'origin, content-type, accept');
     try {
         const currentDate = new Date()
-        const previousDate = new Date(currentDate - 3110400000)
+        const previousDate = new Date(currentDate - 93312000000)
         db.any('SELECT id FROM smc_p_cross')
             .then(data => {
                 const inserts = []
