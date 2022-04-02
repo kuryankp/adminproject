@@ -1,0 +1,1 @@
+echo 228 | sudo -S snap install docker
