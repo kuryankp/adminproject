@@ -1,7 +1,8 @@
 #!/bin/bash
 
-ssh kuryan@192.168.120.128
-
+scp install.sh kuryan@192.168.120.128:/home/kuryan/install.sh
+ssh kuryan@192.168.120.128 chmod +x /home/kuryan/install.sh
+ssh kuryan@192.168.120.128 ./install.sh
 scp off.sh kuryan@192.168.120.128:/home/kuryan/off.sh
 ssh kuryan@192.168.120.128 chmod +x /home/kuryan/off.sh
 scp revivedb.sh kuryan@192.168.120.128:/home/kuryan/revivedb.sh
