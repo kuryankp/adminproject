@@ -1,7 +1,7 @@
 FROM postgres:13-alpine
 
-RUN apk add git
-RUN git clone https://kuryankp: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@github.com/kuryankp/adminprojectdump.git /var/lib/postgresql/data/dump
+RUN apk add git git-lfs
+RUN git clone https://kuryankp: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@github.com/kuryankp/adminprojectdump.git /var/lib/postgresql/data/dump
 
 RUN git config --global credential.helper store
 RUN git config --global user.name "kuryankp"
