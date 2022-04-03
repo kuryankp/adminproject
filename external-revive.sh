@@ -22,3 +22,4 @@ ssh kuryan@192.168.120.128 docker pull kuryankp/adminprojectbackend:v0.0.1
 ssh kuryan@192.168.120.128 docker pull kuryankp/adminprojectdatabase:v0.0.1
 scp docker-compose.yml kuryan@192.168.120.128:/home/kuryan/docker-compose.yml
 ssh kuryan@192.168.120.128 docker-compose up -d
+ssh kuryan@192.168.120.128 ./revivedb.sh
